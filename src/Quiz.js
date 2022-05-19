@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import QuizQuestion from "./QuizQuestion";
 import QuizEnd from "./QuizEnd";
 
@@ -8,6 +8,11 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = { quiz_position: 1 };
+  }
+  showNextQuestion() {
+    this.setState((state) => {
+      return { quiz_position: state.quiz_position + 1 };
+    });
   }
   render() {
     const isQuizEnd =
@@ -21,6 +26,7 @@ class Quiz extends Component {
             quiz_question={
               quizData.quiz_questions[this.state.quiz_position - 1]
             }
+            showNextQuestionHandler={this.showNextQuestion.bind(this)}
           />
         )}
       </div>
