@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import QuizQuestion from "./QuizQuestion";
 import QuizEnd from "./QuizEnd";
 
